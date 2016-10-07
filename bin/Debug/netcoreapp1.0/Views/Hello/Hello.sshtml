@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+         <meta charset="UTF-8">
+         <title>Hello</title>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <p><i>My ViewBag greeting:</i> @ViewBag.greeting</p>
+        @If.Context.ViewBag.show
+            <p>I only appear if ViewBag.show is true!</p>
+        @EndIf
+        <p>List of Users:</p>
+        <ul>@Each
+            <li>@Current</li>
+        @EndEach</ul>
+        <form action="/formsubmitted" method="post">
+            Enter Name: <input type="text" name="name">
+            <input type="submit" name="submit">
+        </form>
+    </body>
+</html>
